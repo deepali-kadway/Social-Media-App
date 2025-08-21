@@ -1,1 +1,63 @@
-<p>login works!</p>
+<div class="card">
+  <div class="card-body">
+    <div class="text-center mb-4">
+      <h1 class="logo-text">SocialCircle</h1>
+    </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <!-- Combining input for email, username, phone -->
+            <div class="mb-2">
+                <input
+                type="text"
+                class="form-control"
+                id="loginInput"
+                placeholder="Phone number, email, username"
+                formControlName="loginInput"
+                />
+                <div
+                class="text-danger" *ngIf="loginInput?.errors && loginInput?.invalid && loginInput?.touched">
+                <div *ngIf="loginForm.get('loginInput')?.errors?.['required'] && loginForm.get('loginInput')?.touched">
+                    Please enter a valid phone, email or username
+                </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <input
+                type="password"
+                class="form-control"
+                id="passwordInput"
+                placeholder="Password"
+                formControlName="passwordInput"
+                />
+                <div class="text-danger" *ngIf="passwordInput?.errors && passwordInput?.invalid && passwordInput?.touched">
+                    <div *ngIf="loginForm.get('passwordInput')?.errors?.['required'] && loginForm.get('passwordInput')?.touched">
+                        Please enter correct password</div>
+                    <div *ngIf="loginForm.get('passwordInput')?.errors?.['minlength'] && loginForm.get('passwordInput')?.touched">
+                    Password must be at least 8 characters long</div>    
+                </div>
+            </div>
+
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Log in</button>
+            </div>
+
+                <div class="divider">
+                <div class="divider-text">or</div>
+            </div>
+            
+            <div class="text-center mb-3">
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+            
+            <hr class="my-3"> <!-- HTML horizontal rule - creates a horizontal line separator -->
+            
+            <div class="text-center">
+                <p class="signup-text mb-0">
+                Don't have an account? 
+                <a href="#" class="signup-link" (click)="navigateToRegister(); $event.preventDefault()">Sign up</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
