@@ -2,6 +2,9 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.card-body{
+    height: 200px;
+}
 
 .card-header{
     display: flex;
