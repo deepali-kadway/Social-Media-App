@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationModel } from '../../models/registration-model'
 import { RegistrationService } from '../../services/registration-service'
+import { LoginService } from '../../services/login-service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -37,7 +38,7 @@ get confirmpasswordInput(){
   return this.registrationForm.get('confirmpasswordInput')
 }
 
-  constructor(private fb: FormBuilder, private regService: RegistrationService, private router: Router){
+  constructor(private fb: FormBuilder, private regService: RegistrationService, private loginService: LoginService, private router: Router){
     this.registrationForm = this.fb.group({
       nameInput: ['', Validators.required],
       emailInput: ['', [Validators.required, Validators.email]],
@@ -64,6 +65,8 @@ get confirmpasswordInput(){
       this.regService.register(user).subscribe({
         next: (response) => {
           alert('User Registration is Successful!');
+          // Store user data in LoginService after successful registration
+          this.loginService.setCurrentUser(response.user);
           this.router.navigate(['/profile'])
         },
         error: (error) => {

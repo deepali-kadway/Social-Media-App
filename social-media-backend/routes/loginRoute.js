@@ -45,10 +45,10 @@ router.post('/login', async (req, res) => {
         const userResponse = {
             id: user.id,
             fullname: user.fullname,
-            email: user.email,
-            phone: user.phone,
+            // email: user.email,
+            // phone: user.phone,
             username: user.username,
-            created_at: user.created_at,
+            // created_at: user.created_at,
         };
 
         return res.status(200).json({message: "Login Successfull", user: userResponse})

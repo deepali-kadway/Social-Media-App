@@ -2,15 +2,115 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Collapsible Sidebar Menu inside card */
+.sidebar-menu {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 0;
+    animation: slideDown 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.sidebar-menu .card-body {
+    padding: 15px 20px !important;
+    min-height: auto !important;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Smooth slide-down animation */
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 100px;
+        opacity: 1;
+    }
+}
+
+.sidebar-menu .nav-link {
+    font-weight: 500;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.sidebar-menu .nav-link:hover {
+    color: #9150af;
+    background-color: rgba(145, 80, 175, 0.1);
+    transform: translateX(3px);
+}
+
+.sidebar-menu .nav-link.active {
+    color: #9150af;
+    background-color: rgba(145, 80, 175, 0.15);
+    font-weight: 600;
+}
+
+.sidebar-menu .nav-link i {
+    margin-right: 6px;
+    width: 16px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.sidebar-menu .text-danger {
+    color: #dc3545 !important;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu .text-danger:hover {
+    color: #fff !important;
+    background-color: #dc3545 !important;
+    transform: translateY(-2px);
+}
+
+/* Menu Toggle Button */
+.btn-outline-secondary {
+    border-color: #9150af;
+    color: #9150af;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #9150af;
+    border-color: #9150af;
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn-outline-secondary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(145, 80, 175, 0.25);
+}
+
+/* Profile Card Improvements */
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
 .card-body{
-    height: 200px;
+    height: auto;
+    min-height: 200px;
 }
 
 .card-header{
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 20px;
     border-bottom: 1px solid #9150af;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 .profile-pic {
@@ -20,51 +120,50 @@
 }
 
 .profile-pic img, #user-photo {
-    width: 90px !important;
-    height: 90px !important;
+    width: 80px !important;
+    height: 80px !important;
     border-radius: 50% !important;
     object-fit: cover !important;
-    border: 1.5px solid #9150af !important;
+    border: 3px solid #9150af !important;
     display: block !important;
-    margin-right: 1rem;
-    /* background-color: #e48585; This will show if image fails to load */
 }
 
-.upload-btn {
-  background: linear-gradient(90deg, #9150af, #6ac6e6);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 24px;
-  font-weight: 600;
-  cursor: pointer;
-  /* box-shadow: 0 2px 8px rgba(145,80,175,0.12); */
-  /* transition: background 0.2s; */
-  font-size: 1rem;
-  border: none;
-  outline: none;
-  display: inline-block; /* inline: sits next to other element horizontally; set width,height, padding using block */
-  margin-left: 20px;
+.upload-btn, .btn-outline-primary {
+    background: linear-gradient(90deg, #9150af, #6ac6e6);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
-.upload-btn:hover {
-  background: linear-gradient(90deg, #6ac6e6, #9150af);
+.upload-btn:hover, .btn-outline-primary:hover {
+    background: linear-gradient(90deg, #6ac6e6, #9150af);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(145, 80, 175, 0.3);
 }
 
 input[type="file"] {
-  display: none;
+    display: none;
 }
 
 #username{
     font-weight: bold;
-    font-size: 22px;
+    font-size: 24px;
     color: #6a3781;
+    margin-bottom: 5px;
 }
 
 #fullname {
-    font-size: 18px;
-    color: #161516;
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 0;
 }
 
+/* Bottom Navigation - restored original styles */
 .nav-link{
     color: #6a3781 !important;
 }
@@ -86,11 +185,20 @@ input[type="file"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;        /* Each item takes equal space */
+    flex: 1;
 }
 
 .nav-link img {
     height: 32px;
     width: 32px;
     object-fit: contain;
+}
+
+/* Collapse animation improvements */
+.collapse {
+    transition: all 0.3s ease;
+}
+
+.collapsing {
+    transition: height 0.3s ease;
 }

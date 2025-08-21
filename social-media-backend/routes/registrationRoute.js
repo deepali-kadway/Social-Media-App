@@ -24,7 +24,17 @@ router.post('/register', async (req, res) => {
         if(err){
             return res.status(500).json({message: 'Database Error', error: err.message, code: err.code});
         }
-        return res.status(201).json({message:'User registered successfully', userId: userID});
+        
+        const userResponse = {
+            id: userID,
+            fullname: nameInput,
+            username: usernameInput,
+        };
+        
+        return res.status(201).json({
+            message:'User registered successfully', 
+            user: userResponse
+        });
     });
   }
   catch(error){
