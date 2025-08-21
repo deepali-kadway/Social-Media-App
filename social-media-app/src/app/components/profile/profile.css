@@ -1,0 +1,93 @@
+* {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.card-header{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-bottom: 1px solid #9150af;
+}
+
+.profile-pic {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.profile-pic img, #user-photo {
+    width: 90px !important;
+    height: 90px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 1.5px solid #9150af !important;
+    display: block !important;
+    margin-right: 1rem;
+    /* background-color: #e48585; This will show if image fails to load */
+}
+
+.upload-btn {
+  background: linear-gradient(90deg, #9150af, #6ac6e6);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  /* box-shadow: 0 2px 8px rgba(145,80,175,0.12); */
+  /* transition: background 0.2s; */
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  display: inline-block; /* inline: sits next to other element horizontally; set width,height, padding using block */
+  margin-left: 20px;
+}
+
+.upload-btn:hover {
+  background: linear-gradient(90deg, #6ac6e6, #9150af);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#username{
+    font-weight: bold;
+    font-size: 22px;
+    color: #6a3781;
+}
+
+#fullname {
+    font-size: 18px;
+    color: #161516;
+}
+
+.nav-link{
+    color: #6a3781 !important;
+}
+
+.nav{
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    border-radius: 0.25rem;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;        /* Each item takes equal space */
+}
+
+.nav-link img {
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+}

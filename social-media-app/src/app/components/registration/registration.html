@@ -1,0 +1,110 @@
+<!-- Registration card -->
+<div class="card">
+  <div class="card-body">
+    <div class="text-center mb-4">
+      <h1 class="logo-text">SocialCircle</h1>
+      <p class="subtitle">Sign up to see photos and videos from your friends.</p>
+    </div>
+
+          <!-- Angular model driven forms -->
+           <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <div class="mb-2">
+                <input
+                type="text"
+                class="form-control"
+                id="nameInput"
+                placeholder="Full Name"
+                formControlName="nameInput"
+                />
+                <div class="text-danger" *ngIf="nameInput?.errors && nameInput?.invalid && nameInput?.touched">
+                    <div *ngIf="registrationForm.get('nameInput')?.errors?.['required'] && registrationForm.get('nameInput')?.touched"
+                    class="invalid-feedback">Please Enter a your Full Name</div>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <input
+                type="email"
+                class="form-control"
+                id="emailInput"
+                placeholder="Email Address"
+                formControlName="emailInput"
+                />
+                <div class="text-danger" *ngIf="emailInput?.errors && emailInput?.invalid && emailInput?.touched">
+                    <div *ngIf="registrationForm.get('emailInput')?.errors?.['required'] && registrationForm.get('emailInput')?.touched"
+                    class="invalid-feedback">Please Enter a valid email address</div>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <input 
+                type="tel"
+                class="form-control"
+                id="phoneInput"
+                placeholder="Phone Number"
+                formControlName="phoneInput"
+                />
+                <div class="text-danger" *ngIf="phoneInput?.errors && phoneInput?.invalid && phoneInput?.touched">
+                    <div *ngIf="registrationForm.get('phoneInput')?.errors?.['required'] && registrationForm.get('phoneInput')?.touched"
+                    class="invalid-feedback">Please Enter a valid Phone Number</div>
+                </div>
+            </div>
+
+            
+            <div class="mb-2">
+                <input 
+                type="text"
+                class="form-control"
+                id="usernameInput"
+                placeholder="Username"
+                formControlName="usernameInput"
+                />
+                <div class="text-danger" *ngIf="usernameInput?.errors && usernameInput?.invalid && usernameInput?.touched">
+                    <div *ngIf="registrationForm.get('usernameInput')?.errors?.['required'] && registrationForm.get('usernameInput')?.touched"
+                    class="invalid-feedback">Please Enter a valid Username</div>
+                </div>
+            </div>
+
+             <div class="mb-2">
+                <input 
+                type="password"
+                class="form-control"
+                id="passwordInput"
+                placeholder="Password"
+                formControlName="passwordInput"
+                />
+                <div class="text-danger" *ngIf="passwordInput?.errors && passwordInput?.invalid && passwordInput?.touched">
+                    <div *ngIf="registrationForm.get('passwordInput')?.errors?.['required'] && registrationForm.get('passwordInput')?.touched"
+                    class="invalid-feedback">Please Enter a valid Password</div>
+                </div>
+            </div>
+
+             <div class="mb-2">
+                <input 
+                type="password"
+                class="form-control"
+                id="confirmpasswordInput"
+                placeholder="Confirm Password"
+                formControlName="confirmpasswordInput"
+                />
+                <div class="text-danger" *ngIf="confirmpasswordInput?.errors && confirmpasswordInput?.invalid && confirmpasswordInput?.touched">
+                    <div *ngIf="registrationForm.get('confirmpasswordInput')?.errors?.['required'] && registrationForm.get('confirmpasswordInput')?.touched"
+                    class="invalid-feedback">Please check your password</div>
+                </div>
+            </div>
+
+            <div class="d-grid mb-3">
+              <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">Sign Up</button>
+            </div>
+
+            <hr class="my-3">
+            
+            <div class="text-center">
+              <p class="signup-text mb-0">
+                Already have an account? 
+                <a href="#" class="signup-link">Sign In</a>
+              </p>
+            </div>
+           </form>
+        </div>
+      </div>
