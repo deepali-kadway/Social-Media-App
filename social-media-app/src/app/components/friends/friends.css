@@ -1,0 +1,133 @@
+* {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.friends-card {
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  background: #ffffff;
+  box-shadow: none;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 500px; /* Fixed height for consistency */
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.form-control {
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+}
+
+.input-group-text {
+  background: #f3eafd;
+  color: #9150af;
+  border-radius: 10px 0 0 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.friends-list {
+  margin-top: 2rem;
+  min-height: 120px; /* Space for results */
+}
+
+.friend-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.friend-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+  border: 2px solid #9150af;
+}
+
+.friend-username {
+  font-weight: 500;
+  color: #6a3781;
+  font-size: 1.1rem;
+}
+
+/* Bottom Navigation - restored original styles */
+.nav-link{
+    color: #6a3781 !important;
+}
+
+.nav{
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    border-radius: 0.25rem;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.nav-link img {
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+}
+
+/* Fixed and stretched bottom navigation bar */
+.friends-bottom-nav {
+  width: 100%;
+  border-top: 1px solid #e9ecef;
+  box-shadow: 0 -2px 8px rgba(145,80,175,0.08);
+  border-radius: 0 0 20px 20px;
+  padding: 0.5rem 0;
+  margin-bottom: 0;
+  background: #f8f9fa;
+}
+
+.friends-bottom-nav .nav-tabs {
+  width: 100%;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.friends-bottom-nav .nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+.friends-bottom-nav .fa-2x {
+  font-size: 2rem;
+  color: #222;
+}
+
+@media (max-width: 768px) {
+  .friends-card {
+    border-radius: 12px;
+  }
+  .friends-bottom-nav {
+    border-radius: 0 0 12px 12px;
+  }
+}

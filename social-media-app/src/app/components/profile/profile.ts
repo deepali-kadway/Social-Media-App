@@ -48,4 +48,9 @@ export class Profile implements OnInit {
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
   }
+
+  // search friends logic
+  searchFriends(){
+    this.router.navigate(['/friends'])
+  }
 }

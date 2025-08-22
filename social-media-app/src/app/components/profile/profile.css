@@ -94,10 +94,12 @@
 
 /* Profile Card Improvements */
 .card {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: none;
-    border-radius: 12px;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    background: #ffffff;
+    box-shadow: none;
     overflow: hidden;
+    min-height: 500px; /* Fixed height for consistency */
 }
 
 .card-body{
