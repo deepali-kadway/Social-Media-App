@@ -29,6 +29,7 @@ app.locals.db = db;
 
 app.use('/users', require('./routes/registrationRoute'))
 app.use('/users', require('./routes/loginRoute'))
+app.use('/friends', require('./routes/searchFriendsRoutes'))
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
