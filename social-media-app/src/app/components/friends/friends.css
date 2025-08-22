@@ -55,10 +55,44 @@
   border: 2px solid #9150af;
 }
 
+.friend-info {
+  flex: 1;
+  margin-right: 1rem;
+}
+
 .friend-username {
   font-weight: 500;
   color: #6a3781;
   font-size: 1.1rem;
+  display: block;
+}
+
+.friend-fullname {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.results-container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.spinner-border {
+  width: 2rem;
+  height: 2rem;
+}
+
+.btn-primary {
+  background-color: #9150af;
+  border-color: #9150af;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.btn-primary:hover {
+  background-color: #7a3f94;
+  border-color: #7a3f94;
 }
 
 /* Bottom Navigation - restored original styles */

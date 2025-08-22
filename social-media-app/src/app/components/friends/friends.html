@@ -3,7 +3,7 @@
     <div class="col-md-8 col-lg-6">
       <div class="card friends-card">
         <div class="card-body">
-          <form class="mb-4">
+          <form class="mb-4" [formGroup]="friendsPage" (submit)="$event.preventDefault()">
             <div class="input-group">
               <span class="input-group-text" id="search-addon">@</span>
               <input 
@@ -12,12 +12,38 @@
                 placeholder="Search By Username" 
                 aria-label="Search By Username" 
                 aria-describedby="search-addon"
+                formControlName="friends"
+                (keydown)="onKeyPress($event)"
               >
             </div>
           </form>
-          <!-- Friends List Placeholder -->
+
+          <!-- Friends List Results -->
           <div class="friends-list">
-            <!-- Friend items will be rendered here -->
+            
+            <!-- Search results -->
+            <div *ngIf="searchResults.length > 0" class="results-container">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h6 class="mb-0">Search Results ({{searchResults.length}})</h6>
+              </div>
+              <div class="friend-item" *ngFor="let friend of searchResults">
+                <img 
+                  src="/assets/images/default.png" 
+                  alt="Profile" 
+                  class="friend-avatar"
+                >
+                <div class="friend-info">
+                  <span class="friend-username">@{{friend.username}}</span>
+                  <p class="friend-fullname">{{friend.fullname}}</p>
+                </div>
+                <button class="btn btn-primary btn-sm">Add Friend</button>
+              </div>
+            </div>
+
+            <!-- No results message -->
+            <div *ngIf="searchResults.length === 0 && friendsPage.get('friends')?.value?.trim()" class="text-center text-muted mt-4">
+              <p>No users found matching "{{friendsPage.get('friends')?.value}}"</p>
+            </div>
           </div>
         </div>
         <!-- Bottom Navigation Bar inside card -->
@@ -34,7 +60,7 @@
               </a>
             </li>
             <li class="nav-item flex-fill text-center">
-              <a class="nav-link profile-link" href="#" data-toggle="tab">
+              <a class="nav-link profile-link" (click)="navigateToProfile()" data-toggle="tab">
                 <img src="/assets/images/profileIcon.png">
               </a>
             </li>
