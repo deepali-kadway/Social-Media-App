@@ -8,7 +8,7 @@ import { Profile } from './components/profile/profile';
 import { Login } from './components/login/login';
 import { Home } from './components/home/home';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Friends } from './components/friends/friends';
+import { Friends } from './components/friends/friends'
 
 
 @NgModule({
